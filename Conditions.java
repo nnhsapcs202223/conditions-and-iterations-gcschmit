@@ -117,6 +117,8 @@ public class Conditions
          *      this means that they contain the same reference. That is, they
          *      refer to the same object in memory, not that the two strings have
          *      the same sequence of characters.
+         *      
+         *  Alias: two variables that refer to the same object
          */
         if(str1 == str2)
         {
@@ -172,6 +174,42 @@ public class Conditions
             firstStr = str2;
         }
         
+        if(firstStr != null)
+        {
+            System.out.println("The first string is: " + firstStr);
+        }
+        else
+        {
+            System.out.println("strings are equal");
+        }
         
+        
+    }
+    
+    public static void stringCompareActivity()
+    {
+        String word1 = "catalog";
+        String word2 = "cat";
+        
+        if(word1.compareTo("aaa") > 0)
+        {
+            System.out.println("condition #1 is true");
+        }
+        
+        if(word1.equals(word2))
+        // if(word1.compareTo(word2) == 0)
+        {
+            System.out.println("condition #2 is true");
+        }
+        
+        if(word1.compareTo(word2) < 0)
+        {
+            System.out.println("condition #3 is true");
+        }
+        
+        if(word1.substring(0, 3).equals(word2.substring(0, 3)))
+        {
+            System.out.println("condition #4 is true");
+        }
     }
 }
