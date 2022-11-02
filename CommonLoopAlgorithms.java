@@ -10,7 +10,26 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForLength()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter words >_<");
+        int wordsGreaterThanFour = 0;
+        boolean stillGoing = true;
+        while (stillGoing)
+        {
+            String nextWord = s.next();
+            if (!nextWord.equals("quit"))
+            {
+                if (nextWord.length() > 4)
+                {
+                    wordsGreaterThanFour++;
+                }
+            }
+            else
+            {
+                stillGoing = false;
+            }
+        }
+        return wordsGreaterThanFour;
     }
 
     /*
@@ -21,7 +40,18 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForPrefix()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+
+        int count = 0;
+        String str = "";
+        while(!str.equals("quit")){
+            System.out.println("Enter words end with quit: ");
+            str = s.next();
+            if(str.substring(0,3).equals("con")){
+                count+=1;
+            }
+        }
+        return count;
     }
 
     /*
@@ -32,7 +62,24 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForSuffix()
     {
-        return 0;
+        System.out.print("Enter a series of words, separated by spaces (enter quit at end): ");
+        Scanner s = new Scanner(System.in);
+        String word = s.next();
+        int count = 0;
+        String wordSuffix = "";
+
+        do
+        {
+            wordSuffix = word.substring(word.length()-3, word.length());
+            if (wordSuffix.equals("est"))
+            {
+                count+=1;
+            }
+            word = s.next();
+        }
+        while (word.equals("quit")!=true);
+
+        return count;
     }
 
     /*
@@ -65,7 +112,19 @@ public class CommonLoopAlgorithms
      */
     public static String promptUntilMatch()
     {
-        return "";
+        Scanner s = new Scanner(System.in);
+        String input;
+        do
+        {
+            System.out.println("Type a word that is alphabetically after North and has more than 6 characters");
+            input = s.nextLine();
+
+        }
+        while(!((input.length() > 6) && (input.compareTo("north") > 0)));
+
+        System.out.println("Done");
+
+        return input;
     }
 
     /*
@@ -75,5 +134,34 @@ public class CommonLoopAlgorithms
      */
     public static void identifyDigits(int intValue)
     {
+        String strValue = "" + intValue;
+        for(int i = 0 ; i < strValue.length(); i++)
+        {
+            System.out.println(strValue.substring(i,i+1));
+        }
     }
+
+    public static void identifyDigits2(int intValue)
+    {
+        String newString = "";
+        newString = newString + intValue;
+        String digit = "";
+        for (int i=0;i<newString.length();i++)
+        {
+            digit = newString.substring(i,i+1);
+            System.out.println(digit);
+        }
+    }
+
+    public static void identifyDigits3(int intValue)
+    {
+        String stringIntValue = "" + intValue;
+        for(int i = 0; i <= stringIntValue.length(); i++)
+        {
+
+            System.out.println(stringIntValue.substring(0 + i, i+1));
+
+        }
+    }
+
 }
