@@ -49,7 +49,7 @@ public class CommonLoopAlgorithms
     /*
      * Loop Algorithm #5: Compare Adjacent Words
      * reads a series of words until an adjacent duplicate word is entered
-     * @return the number of unique words entered before the duplicate
+     * @return the number of words entered before the duplicate
      */
     public static int compareAdjacent()
     {
