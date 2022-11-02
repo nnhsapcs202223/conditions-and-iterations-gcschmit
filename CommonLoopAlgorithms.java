@@ -71,7 +71,8 @@ public class CommonLoopAlgorithms
     /*
      * Loop Algorithm #7: Identify Individual Digits in an Integer (Extension)
      * Write an algorithm to identify the individual digits in an integer.
-     * For example, if the integer 123456 is entered by a user, print each digit on its own line.
+     * For example, if the integer 123456 is entered by a user, print each digit
+     * on its own line (right-most digit first).
      */
     public static void identifyDigits(int intValue)
     {
