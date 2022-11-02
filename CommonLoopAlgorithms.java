@@ -10,7 +10,16 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForLength()
     {
-        return 0;
+        String word = "";
+        int bigwords = 0;
+        Scanner s = new Scanner(System.in);
+        while (!word.equals("quit"))
+        {
+            word = s.next();
+            if (word.length() > 4)
+                bigwords++;
+        }
+        return bigwords;
     }
 
     /*
@@ -21,7 +30,23 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForPrefix()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        int sum = 0;
+        String str;
+
+        do
+        {
+            System.out.print("Enter a word (type quit to quit): ");
+
+            str = s.next();
+            if((str.substring(0,3)).equals("con"))
+            {
+                sum += 1;
+            }
+        }
+        while(! str.equals("quit"));
+
+        return sum;
     }
 
     /*
@@ -32,7 +57,17 @@ public class CommonLoopAlgorithms
      */
     public static int countMatchesForSuffix()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        String word;
+        int count = 0;
+        do{
+            word = s.next();
+            if(word.substring(word.length() - 3).equals("est")){
+                count++;
+            }
+        }
+        while(!word.equals("quit"));
+        return count;
     }
 
     /*
@@ -43,7 +78,19 @@ public class CommonLoopAlgorithms
      */
     public static String reverseWord()
     {
-        return "";
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a word: ");
+        String word = s.next();
+        int length = word.length();
+        String reverse = "";
+        for(int i = 0; i < length; i++)
+        {
+            String letter = word.substring((length-1)-i,length-i);
+            reverse += letter;
+        }
+
+        return reverse;
+
     }
 
     /*
@@ -53,7 +100,21 @@ public class CommonLoopAlgorithms
      */
     public static int compareAdjacent()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a series of words (enter a duplicate word to end): ");
+        String word = s.next();
+        String previousWord = "";
+        int counter = 0;
+
+        while(!word.equals(previousWord))
+        {
+            counter++;
+            previousWord = word;
+            word = s.next();
+        }
+
+        return counter;
     }
 
     /*
@@ -65,7 +126,21 @@ public class CommonLoopAlgorithms
      */
     public static String promptUntilMatch()
     {
-        return "";
+        Scanner s = new Scanner(System.in);
+        String word = "";
+
+        while(true)
+        {
+            System.out.println("enter a word: ");
+            word = s.nextLine();
+
+            int result = word.compareTo("north");
+            if((result > 0) && word.length() > 6)
+            {
+                return word;
+            }
+        }
+
     }
 
     /*
@@ -75,5 +150,19 @@ public class CommonLoopAlgorithms
      */
     public static void identifyDigits(int intValue)
     {
+        String intstring = "" + intValue;
+        for (int i = intstring.length()-1; i >= 0; i--)
+        {
+            System.out.println(intstring.substring(i, i+1));
+        }
     }
+
+    public static void identifyDigits2(int intValue)
+    {
+        String str = Integer.toString(intValue);
+        for(int i=0; i<str.length(); i++) {
+            System.out.println(str.charAt(i));
+        }
+    }
+
 }
