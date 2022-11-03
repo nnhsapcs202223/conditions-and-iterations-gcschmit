@@ -47,7 +47,7 @@ public class CommonLoopAlgorithms
         while(!str.equals("quit")){
             System.out.println("Enter words end with quit: ");
             str = s.next();
-            if(str.substring(0,3).equals("con")){
+            if(str.length() >= 3 && str.substring(0,3).equals("con")){
                 count+=1;
             }
         }
@@ -64,18 +64,21 @@ public class CommonLoopAlgorithms
     {
         System.out.print("Enter a series of words, separated by spaces (enter quit at end): ");
         Scanner s = new Scanner(System.in);
-        String word = s.next();
+        String word;
         int count = 0;
         String wordSuffix = "";
 
         do
         {
-            wordSuffix = word.substring(word.length()-3, word.length());
-            if (wordSuffix.equals("est"))
-            {
-                count+=1;
-            }
             word = s.next();
+            if(word.length() >= 3)
+            {
+                wordSuffix = word.substring(word.length()-3, word.length());
+                if (wordSuffix.equals("est"))
+                {
+                    count+=1;
+                }
+            }
         }
         while (word.equals("quit")!=true);
 
@@ -90,7 +93,19 @@ public class CommonLoopAlgorithms
      */
     public static String reverseWord()
     {
-        return "";
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter any word: ");
+        String word = s.next();
+        String inReverse = "";
+        for(int i = (word.length()-1); i >= 0; i--)
+        {
+            inReverse += word.substring(i,i+1);
+        }
+
+        //inReverse = (word.substring((word.length()-1))) + inReverse;
+
+        return inReverse;
     }
 
     /*
@@ -100,7 +115,24 @@ public class CommonLoopAlgorithms
      */
     public static int compareAdjacent()
     {
-        return 0;
+        Scanner s = new Scanner(System.in);
+        int enteredWords = 0;
+        String oldWord;
+        String newWord;
+        System.out.println("Print the first word");
+        newWord = s.next().toLowerCase();
+        do
+        {
+            oldWord = newWord;
+            System.out.println("Please enter the next word");
+            newWord = s.next().toLowerCase();
+
+            enteredWords ++;
+
+        }
+        while (!(newWord.equals(oldWord)));
+
+        return enteredWords;
     }
 
     /*
