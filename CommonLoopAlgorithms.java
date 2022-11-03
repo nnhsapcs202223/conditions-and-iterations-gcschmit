@@ -39,7 +39,7 @@ public class CommonLoopAlgorithms
             System.out.print("Enter a word (type quit to quit): ");
 
             str = s.next();
-            if((str.substring(0,3)).equals("con"))
+            if(str.length() > 2 && (str.substring(0,3)).equals("con"))
             {
                 sum += 1;
             }
@@ -58,11 +58,12 @@ public class CommonLoopAlgorithms
     public static int countMatchesForSuffix()
     {
         Scanner s = new Scanner(System.in);
+        System.out.print("enter a series of words or 'quit' to stop: ");
         String word;
         int count = 0;
         do{
             word = s.next();
-            if(word.substring(word.length() - 3).equals("est")){
+            if(word.length() > 2 && word.substring(word.length() - 3).equals("est")){
                 count++;
             }
         }
