@@ -69,7 +69,7 @@ public class CommonLoopAlgorithms
         {
             System.out.println("Enter words: ");
             x = s.next();
-            if(!x.equals("quit"))
+            if(!x.equals("quit") && x.length() >= 3)
             {
                 String y = new String(x.substring(x.length() - 3));
                 if(y.equals("est"))
@@ -95,8 +95,8 @@ public class CommonLoopAlgorithms
         String str = s.next();
         String str2 = "";
         for(int count = 1;
-        count <= str.length();
-        count++)
+                count <= str.length();
+                count++)
         {
             str2 += str.substring(str.length() - count, str.length() - count +1);
         }
