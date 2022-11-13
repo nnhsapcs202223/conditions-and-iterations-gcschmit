@@ -71,7 +71,7 @@ public class GerrymanderingComponent extends JComponent
      */
     private void promptForState()
     {
-        // TODO: implement method to meet requiremetns specified in the
+        // TODO: implement method to meet requirements specified in the
         //      above Javadoc comment
 
     }
